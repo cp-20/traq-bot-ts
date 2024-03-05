@@ -4,7 +4,17 @@ TypeScript で traQ Bot を作る人向けのライブラリです。
 
 ## 使い方
 
-TODO
+```ts
+import { Client } from 'traq-bot-ts';
+
+const client = new Client();
+
+client.on('MESSAGE_CREATED', ({ message }) => {
+   console.log(message.text);
+});
+
+await client.listen(() => console.log('connected'));
+```
 
 ## コントリビューター向け
 
