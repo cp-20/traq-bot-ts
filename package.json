@@ -1,13 +1,10 @@
 {
-  "name": "esm-package",
-  "author": "hogehoge <hogehoge@example.com>",
-  "description": "",
-  "homepage": "",
-  "bugs": {
-    "url": ""
-  },
+  "name": "traq-bot-ts",
+  "author": "cp20 <n.naoki.1587@gmail.com>",
+  "description": "A library for developing traQ Bot",
   "keywords": [
-    "typescript"
+    "typescript",
+    "traQ"
   ],
   "license": "MIT",
   "version": "0.1.0",
@@ -49,8 +46,8 @@
     "@arethetypeswrong/cli": "^0.15.0",
     "@biomejs/biome": "1.5.3",
     "@changesets/cli": "^2.27.1",
-    "bun-types": "^1.0.15",
-    "esbuild": "^0.20.0",
+    "bun-types": "^1.0.30",
+    "esbuild": "^0.20.1",
     "run-z": "^2.0.0",
     "typescript": "5.3.3"
   }
