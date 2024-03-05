@@ -36,6 +36,7 @@ await Promise.all([
       format: 'esm',
       target: 'esnext',
       outExtension: { '.js': '.mjs' },
+      external: ['ws'],
     })
     .then(console.info)
     .catch(console.error),
@@ -49,6 +50,7 @@ await Promise.all([
       format: 'cjs',
       target: 'esnext',
       outExtension: { '.js': '.cjs' },
+      external: ['ws'],
     })
     .then(console.info)
     .catch(console.error),
