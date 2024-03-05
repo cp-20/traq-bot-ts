@@ -1,13 +1,13 @@
 import type { WebSocket } from 'ws';
 import type { Event } from './events.mts';
-import { createWSConnection, handleData, type DataHandlers } from './traq.mts';
+import { type DataHandlers, createWSConnection, handleData } from './traq.mts';
 
 export class Client {
   private ws: WebSocket | null = null;
   private debug;
   private handlers: DataHandlers;
 
-  constructor(debug: boolean = false) {
+  constructor(debug = false) {
     this.handlers = {
       ERROR: (data) => {
         console.error(`Error from traQ server: ${data.body}`);

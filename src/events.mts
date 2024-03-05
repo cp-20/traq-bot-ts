@@ -1,4 +1,4 @@
-import { z, type ZodRawShape, type Primitive } from 'zod';
+import { type Primitive, type ZodRawShape, z } from 'zod';
 
 export const UserSchema = z.object({
   id: z.string().uuid(),
@@ -69,7 +69,7 @@ export const UserGroupSchema = z.object({
   members: z.array(
     UserGroupMemberSchema.extend({
       role: z.string(),
-    })
+    }),
   ),
   createdAt: z.coerce.date(),
   updatedAt: z.coerce.date(),
@@ -78,7 +78,7 @@ export type UserGroup = z.infer<typeof UserGroupSchema>;
 
 const createEventSchema = <T extends Primitive, K extends ZodRawShape>(
   type: T,
-  body: K
+  body: K,
 ) =>
   z.object({
     type: z.literal(type),
@@ -121,7 +121,7 @@ export const DirectMessageCreatedEventSchema = createEventSchema(
   'DIRECT_MESSAGE_CREATED',
   {
     message: MessageSchema,
-  }
+  },
 );
 export type DirectMessageCreatedEvent = z.infer<
   typeof DirectMessageCreatedEventSchema
@@ -135,7 +135,7 @@ export const DirectMessageDeletedEventSchema = createEventSchema(
       userId: z.string().uuid(),
       channelId: z.string().uuid(),
     }),
-  }
+  },
 );
 export type DirectMessageDeletedEvent = z.infer<
   typeof DirectMessageDeletedEventSchema
@@ -145,7 +145,7 @@ export const DirectMessageUpdatedEventSchema = createEventSchema(
   'DIRECT_MESSAGE_UPDATED',
   {
     message: MessageSchema,
-  }
+  },
 );
 export type DirectMessageUpdatedEvent = z.infer<
   typeof DirectMessageUpdatedEventSchema
@@ -156,7 +156,7 @@ export const BotMessageStampsUpdatedEventSchema = createEventSchema(
   {
     messageId: z.string(),
     stamps: z.array(StampSchema),
-  }
+  },
 );
 
 export const ChannelCreatedEventSchema = createEventSchema('CHANNEL_CREATED', {
@@ -170,7 +170,7 @@ export const ChannelTopicChangedEventSchema = createEventSchema(
     channel: ChannelSchema,
     topic: z.string(),
     updater: UserSchema,
-  }
+  },
 );
 
 export const UserCreatedEventSchema = createEventSchema('USER_CREATED', {
@@ -187,7 +187,7 @@ export const UserGroupCreatedEventSchema = createEventSchema(
   'USER_GROUP_CREATED',
   {
     group: UserGroupSchema,
-  }
+  },
 );
 export type UserGroupCreatedEvent = z.infer<typeof UserGroupCreatedEventSchema>;
 
@@ -195,7 +195,7 @@ export const UserGroupUpdatedEventSchema = createEventSchema(
   'USER_GROUP_UPDATED',
   {
     groupId: z.string().uuid(),
-  }
+  },
 );
 export type UserGroupUpdatedEvent = z.infer<typeof UserGroupUpdatedEventSchema>;
 
@@ -203,7 +203,7 @@ export const UserGroupDeletedEventSchema = createEventSchema(
   'USER_GROUP_DELETED',
   {
     groupId: z.string().uuid(),
-  }
+  },
 );
 export type UserGroupDeletedEvent = z.infer<typeof UserGroupDeletedEventSchema>;
 
@@ -215,7 +215,7 @@ export const UserGroupMemberAddedEventSchema = createEventSchema(
       userId: z.string().uuid(),
       role: z.string(),
     }),
-  }
+  },
 );
 export type UserGroupMemberAddedEvent = z.infer<
   typeof UserGroupMemberAddedEventSchema
@@ -225,7 +225,7 @@ export const UserGroupMemberUpdatedEventSchema = createEventSchema(
   'USER_GROUP_MEMBER_UPDATED',
   {
     groupMember: UserGroupMemberSchema,
-  }
+  },
 );
 export type UserGroupMemberUpdatedEvent = z.infer<
   typeof UserGroupMemberUpdatedEventSchema
@@ -235,7 +235,7 @@ export const UserGroupMemberRemovedEventSchema = createEventSchema(
   'USER_GROUP_MEMBER_REMOVED',
   {
     groupMember: UserGroupMemberSchema,
-  }
+  },
 );
 export type UserGroupMemberRemovedEvent = z.infer<
   typeof UserGroupMemberRemovedEventSchema
@@ -245,7 +245,7 @@ export const UserGroupAdminAddedEventSchema = createEventSchema(
   'USER_GROUP_ADMIN_ADDED',
   {
     groupMember: UserGroupMemberSchema,
-  }
+  },
 );
 export type UserGroupAdminAddedEvent = z.infer<
   typeof UserGroupAdminAddedEventSchema
@@ -255,7 +255,7 @@ export const UserGroupAdminRemovedEventSchema = createEventSchema(
   'USER_GROUP_ADMIN_REMOVED',
   {
     groupMember: UserGroupMemberSchema,
-  }
+  },
 );
 export type UserGroupAdminRemovedEvent = z.infer<
   typeof UserGroupAdminRemovedEventSchema

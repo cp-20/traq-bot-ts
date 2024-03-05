@@ -1,1 +1,1 @@
-module.exports = require("./index.mts");
+module.exports = require('./index.mts');
