@@ -14,7 +14,6 @@ runs:
       with:
         node-version: latest
         registry-url: https://registry.npmjs.org
-        scope: '@cp20'
 
     - name: Setup nr
       shell: bash
