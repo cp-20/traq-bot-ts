@@ -1,13 +1,15 @@
 # traq-bot-ts
 
-TypeScript で traQ Bot を作る人向けのライブラリです。
+TypeScript で traQ Bot を作りたい人向けのライブラリです。JavaScriptでも多分使えます。
+
+強力に型が整備されていることと、使いやすいAPIを備えていることが特徴です。
 
 ## 使い方
 
 ```ts
 import { Client } from 'traq-bot-ts';
 
-const client = new Client();
+const client = new Client({ token: 'WRITE_YOUR_TOKEN_HERE' });
 
 client.on('MESSAGE_CREATED', ({ message }) => {
    console.log(message.text);
@@ -15,6 +17,14 @@ client.on('MESSAGE_CREATED', ({ message }) => {
 
 await client.listen(() => console.log('connected'));
 ```
+
+`new Client()`でクライアントを生成して、各種イベントを`client.on()`でリッスンできます。
+
+最後に`await client.listen()`で実際にサーバーに接続して稼働を開始します。
+
+具体的なイベントについてはBOT Consoleのイベントリファレンスを参照してください。
+
+どのようなイベント
 
 ## コントリビューター向け
 
