@@ -1,11 +1,9 @@
 import { WebSocket } from 'ws';
 import { type Event, EventSchema } from './events.mts';
 
-const accessToken = process.env.TRAQ_ACCESS_TOKEN;
-
-export const createWSConnection = () =>
+export const createWSConnection = (token: string) =>
   new WebSocket('wss://q.trap.jp/api/v3/bots/ws', {
-    headers: { Authorization: `Bearer ${accessToken}` },
+    headers: { Authorization: `Bearer ${token}` },
   });
 
 export type DataHandlers = Partial<{

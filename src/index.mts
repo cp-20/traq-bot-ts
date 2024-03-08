@@ -2,18 +2,28 @@ import type { WebSocket } from 'ws';
 import type { Event } from './events.mts';
 import { type DataHandlers, createWSConnection, handleData } from './traq.mts';
 
+type ClientOption = {
+  token?: string;
+  debug?: boolean;
+};
+
 export class Client {
   private ws: WebSocket | null = null;
   private debug;
+  private token;
   private handlers: DataHandlers;
 
-  constructor(debug = false) {
+  constructor({ token, debug }: ClientOption) {
     this.handlers = {
       ERROR: (data) => {
         console.error(`Error from traQ server: ${data.body}`);
       },
     };
-    this.debug = debug;
+    this.debug = debug ?? false;
+
+    const token_ = token ?? process.env.TRAQ_ACCESS_TOKEN;
+    if (!token_) throw new Error('token is required');
+    this.token = token_;
   }
 
   on<T extends Event['type']>(type: T, handler: Required<DataHandlers>[T]) {
@@ -24,7 +34,7 @@ export class Client {
   }
 
   async listen(openHandler?: () => void) {
-    this.ws = createWSConnection();
+    this.ws = createWSConnection(this.token);
 
     this.ws.addEventListener('open', () => openHandler?.());
 
