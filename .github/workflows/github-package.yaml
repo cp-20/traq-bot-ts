@@ -26,7 +26,7 @@ jobs:
         uses: ./.github/actions/setup-js
 
       - name: Debug
-        run: cat /home/runner/work/_temp/.npmrc
+        run: echo ${{ secrets.NPM_TOKEN }}
 
       - name: Build
         run: nr build
