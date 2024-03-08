@@ -4,7 +4,7 @@
   "description": "A library for developing traQ Bot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cp-20/traq-bot-ts.git"
+    "url": "git+https://github.com/cp-20/traq-bot-ts.git"
   },
   "keywords": [
     "typescript",
