@@ -11,7 +11,7 @@
     "traQ"
   ],
   "license": "MIT",
-  "version": "1.0.0-rc9",
+  "version": "1.0.0",
   "scripts": {
     "deploy": "",
     "build": "run-z build:transpile,build:esm,build:cjs",
