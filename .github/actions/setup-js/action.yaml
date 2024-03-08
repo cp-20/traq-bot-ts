@@ -1,5 +1,5 @@
 name: setup js
-description: "setup-javascript"
+description: 'setup-javascript'
 
 runs:
   using: composite
@@ -14,7 +14,7 @@ runs:
       with:
         node-version: latest
         registry-url: https://registry.npmjs.org
-        scope: '@totto2727'
+        scope: '@cp20'
 
     - name: Setup nr
       shell: bash
@@ -23,6 +23,3 @@ runs:
     - name: Install
       shell: bash
       run: ni
-
-
-
