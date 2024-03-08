@@ -2,6 +2,10 @@
   "name": "traq-bot-ts",
   "author": "cp20 <n.naoki.1587@gmail.com>",
   "description": "A library for developing traQ Bot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cp-20/traq-bot-ts.git"
+  },
   "keywords": [
     "typescript",
     "traQ"
