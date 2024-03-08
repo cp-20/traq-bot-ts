@@ -22,8 +22,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: setup js
+      - name: Setup JavaScript Environment
         uses: ./.github/actions/setup-js
+
+      - name: Debug
+        run: cat ~/.npmrc
 
       - name: Build
         run: nr build
