@@ -28,10 +28,7 @@ jobs:
       - name: Build
         run: nr build
 
-      - name: Authenticate npm
-        run: npm set "//registry.npmjs.org/:_authToken" $NPM_TOKEN
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Publish npm package
         run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
