@@ -40,6 +40,15 @@ export class Client {
       }
     });
 
+    const interval = setInterval(() => {
+      this.ws?.ping({}, undefined, async (err) => {
+        if (!err) return;
+        if (this.debug) console.log('ping failed, reconnecting...');
+        this.ws?.close();
+        clearInterval(interval);
+      });
+    }, 1000);
+
     await new Promise((resolve) => {
       this.ws?.addEventListener('close', async () => {
         this.ws = null;
