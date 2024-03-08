@@ -25,11 +25,6 @@ jobs:
       - name: Setup JavaScript Environment
         uses: ./.github/actions/setup-js
 
-      - name: Debug
-        run: echo $NODE_AUTH_TOKEN
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Build
         run: nr build
 
