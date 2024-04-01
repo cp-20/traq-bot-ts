@@ -1,6 +1,7 @@
 import type { WebSocket } from 'ws';
 import type { Event } from './events.mts';
 import { type DataHandlers, createWSConnection, handleData } from './traq.mts';
+export * from './api.ts';
 
 type ClientOption = {
   token?: string;

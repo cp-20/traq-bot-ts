@@ -25,7 +25,8 @@
     "test": "bun test",
     "precommit": "run-z check:type fix test build",
     "prepublish": "attw --pack .",
-    "run-z": "run-z"
+    "run-z": "run-z",
+    "generate-api": "bunx swagger-typescript-api --output src --name api.mts --path https://raw.githubusercontent.com/traPtitech/traQ/master/docs/v3-api.yaml"
   },
   "files": [
     "src",

@@ -2,7 +2,7 @@
   "$schema": "https://biomejs.dev/schemas/1.4.0/schema.json",
   "files": {
     "include": ["*.*ts", "**/*.*ts", "*.json"],
-    "ignore": ["dist"]
+    "ignore": ["dist", "src/api.ts"]
   },
   "formatter": {
     "indentStyle": "space"
