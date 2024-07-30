@@ -8,7 +8,7 @@
   },
   "keywords": ["typescript", "traQ"],
   "license": "MIT",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "scripts": {
     "deploy": "",
     "build": "run-z build:transpile,build:esm,build:cjs",
