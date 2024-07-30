@@ -1,4 +1,4 @@
-import type { OutgoingHttpHeaders } from 'http';
+import type { OutgoingHttpHeaders } from 'node:http';
 import WebSocket from 'ws';
 
 export const createWebSocketWithHeader = (headers: OutgoingHttpHeaders) => {
