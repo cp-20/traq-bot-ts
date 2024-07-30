@@ -15,7 +15,7 @@
  * Message
  * メッセージ
  */
-export interface Message {
+export default interface Message {
   /**
    * メッセージUUID
    * @format uuid
@@ -890,6 +890,90 @@ export interface MyUserDetail {
 }
 
 /**
+ * OIDCUserInfo
+ * 自分のユーザー詳細情報
+ */
+export interface OIDCUserInfo {
+  /**
+   * ユーザーUUID
+   * @format uuid
+   */
+  sub: string;
+  /**
+   * ユーザー名
+   * @pattern ^[a-zA-Z0-9_-]{1,32}$
+   */
+  name: string;
+  /**
+   * ユーザー名
+   * @pattern ^[a-zA-Z0-9_-]{1,32}$
+   */
+  preferred_username: string;
+  /** アイコン画像URL */
+  picture: string;
+  /**
+   * 更新日時
+   * @format int64
+   */
+  updated_at?: number;
+  /** traQ特有のユーザー詳細情報 */
+  traq?: OIDCTraqUserInfo;
+}
+
+/**
+ * OIDCTraqUserInfo
+ * traQ特有のユーザー詳細情報
+ */
+export interface OIDCTraqUserInfo {
+  /**
+   * 自己紹介(biography)
+   * @maxLength 1000
+   */
+  bio: string;
+  /** 所属グループのUUIDの配列 */
+  groups: string[];
+  /** タグリスト */
+  tags: UserTag[];
+  /**
+   * 最終オンライン日時
+   * @format date-time
+   */
+  last_online: string | null;
+  /**
+   * Twitter ID
+   * @pattern ^[a-zA-Z0-9_]{1,15}$
+   */
+  twitter_id: string;
+  /**
+   * ユーザー表示名
+   * @minLength 0
+   * @maxLength 32
+   */
+  display_name: string;
+  /**
+   * アイコンファイルUUID
+   * @format uuid
+   */
+  icon_file_id: string;
+  /** BOTかどうか */
+  bot: boolean;
+  /**
+   * ユーザーアカウント状態
+   * 0: 停止
+   * 1: 有効
+   * 2: 一時停止
+   */
+  state: UserAccountState;
+  /** 所有している権限の配列 */
+  permissions: UserPermission[];
+  /**
+   * ホームチャンネル
+   * @format uuid
+   */
+  home_channel: string | null;
+}
+
+/**
  * PatchChannelSubscribersRequest
  * チャンネル購読者編集リクエスト
  */
@@ -1069,7 +1153,7 @@ export interface PostWebhookRequest {
  */
 export interface PutUserIconRequest {
   /**
-   * アイコン画像(1MBまでのpng, jpeg, gif)
+   * アイコン画像(2MBまでのpng, jpeg, gif)
    * @format binary
    */
   file: File;
@@ -1183,7 +1267,7 @@ export interface PostUserRequest {
   name: string;
   /**
    * パスワード
-   * @pattern ^[\\x20-\\x7E]{10,32}$
+   * @pattern ^[\x20-\x7E]{10,32}$
    */
   password?: string;
 }
@@ -1306,7 +1390,7 @@ export interface PostLoginRequest {
   name: string;
   /**
    * パスワード
-   * @pattern ^[\\x20-\\x7E]{10,32}$
+   * @pattern ^[\x20-\x7E]{10,32}$
    */
   password: string;
 }
@@ -1354,6 +1438,8 @@ export interface ActiveOAuth2Token {
  * OAuth2スコープ
  */
 export enum OAuth2Scope {
+  Openid = 'openid',
+  Profile = 'profile',
   Read = 'read',
   Write = 'write',
   ManageBot = 'manage_bot',
@@ -1384,6 +1470,8 @@ export interface OAuth2Client {
   developerId: string;
   /** 要求スコープの配列 */
   scopes: OAuth2Scope[];
+  /** confidential client なら true, public client なら false */
+  confidential: boolean;
 }
 
 /**
@@ -1412,6 +1500,8 @@ export interface PatchClientRequest {
    * @format uuid
    */
   developerId?: string;
+  /** confidential client なら true, public client なら false */
+  confidential?: boolean;
 }
 
 /**
@@ -1446,6 +1536,8 @@ export interface OAuth2ClientDetail {
   callbackUrl: string;
   /** クライアントシークレット */
   secret: string;
+  /** confidential client なら true, public client なら false */
+  confidential: boolean;
 }
 
 /**
@@ -1471,6 +1563,11 @@ export interface PostClientRequest {
    * @maxLength 1000
    */
   description: string;
+  /**
+   * confidential client なら true, public cleint なら false
+   * @default false
+   */
+  confidential?: boolean;
 }
 
 /**
@@ -1591,6 +1688,11 @@ export interface PatchBotRequest {
    * @uniqueItems false
    */
   subscribeEvents?: string[];
+  /**
+   * 自己紹介(biography)
+   * @maxLength 1000
+   */
+  bio?: string;
 }
 
 /**
@@ -2459,6 +2561,7 @@ export enum UserPermission {
   EditStamp = 'edit_stamp',
   EditStampCreatedByOthers = 'edit_stamp_created_by_others',
   DeleteStamp = 'delete_stamp',
+  DeleteMyStamp = 'delete_my_stamp',
   AddMessageStamp = 'add_message_stamp',
   RemoveMessageStamp = 'remove_message_stamp',
   GetMyStampHistory = 'get_my_stamp_history',
@@ -2469,6 +2572,7 @@ export enum UserPermission {
   GetUser = 'get_user',
   RegisterUser = 'register_user',
   GetMe = 'get_me',
+  GetOIDCUserInfo = 'get_oidc_userinfo',
   EditMe = 'edit_me',
   ChangeMyIcon = 'change_my_icon',
   ChangeMyPassword = 'change_my_password',
@@ -2528,12 +2632,7 @@ export interface WebRTCUserState {
    */
   channelId: string;
   /** セッションの配列 */
-  sessions: {
-    /** 状態 */
-    state: string;
-    /** セッションID */
-    sessionId: string;
-  }[];
+  sessions: Session[];
 }
 
 /**
@@ -2609,6 +2708,13 @@ export interface PutNotifyCitationRequest {
   notifyCitation: boolean;
 }
 
+export interface Session {
+  /** 状態 */
+  state: string;
+  /** セッションID */
+  sessionId: string;
+}
+
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, 'body' | 'bodyUsed'>;
 
@@ -2645,12 +2751,13 @@ export interface ApiConfig<SecurityDataType = unknown> {
   customFetch?: typeof fetch;
 }
 
-export interface HttpResponse<D, E = unknown> extends Response {
+export interface HttpResponse<D extends unknown, E extends unknown = unknown>
+  extends Response {
   data: D;
   error: E;
 }
 
-type CancelToken = symbol | string | number;
+type CancelToken = Symbol | string | number;
 
 export enum ContentType {
   Json = 'application/json',
@@ -2660,7 +2767,7 @@ export enum ContentType {
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl = 'https://q.trap.jp/api/v3';
+  public baseUrl: string = 'https://q.trap.jp/api/v3';
   private securityData: SecurityDataType | null = null;
   private securityWorker?: ApiConfig<SecurityDataType>['securityWorker'];
   private abortControllers = new Map<CancelToken, AbortController>();
@@ -2726,9 +2833,9 @@ export class HttpClient<SecurityDataType = unknown> {
       input !== null && typeof input !== 'string'
         ? JSON.stringify(input)
         : input,
-    [ContentType.FormData]: (input: any) =>
-      Object.keys(input || {}).reduce((formData, key) => {
-        const property = input[key];
+    [ContentType.FormData]: (input: FormData) =>
+      (Array.from(input.keys()) || []).reduce((formData, key) => {
+        const property = input.get(key);
         formData.append(
           key,
           property instanceof Blob
@@ -2826,7 +2933,7 @@ export class HttpClient<SecurityDataType = unknown> {
             : payloadFormatter(body),
       }
     ).then(async (response) => {
-      const r = response as HttpResponse<T, E>;
+      const r = response.clone() as HttpResponse<T, E>;
       r.data = null as unknown as T;
       r.error = null as unknown as E;
 
@@ -2865,7 +2972,9 @@ export class HttpClient<SecurityDataType = unknown> {
  *
  * traQ v3 API
  */
-export class Api<SecurityDataType> extends HttpClient<SecurityDataType> {
+export class Api<
+  SecurityDataType extends unknown
+> extends HttpClient<SecurityDataType> {
   channels = {
     /**
      * @description 指定したチャンネルにメッセージを投稿します。 embedをtrueに指定すると、メッセージ埋め込みが自動で行われます。 アーカイブされているチャンネルに投稿することはできません。
@@ -4057,6 +4166,24 @@ export class Api<SecurityDataType> extends HttpClient<SecurityDataType> {
         body: data,
         secure: true,
         type: ContentType.Json,
+        ...params,
+      }),
+
+    /**
+     * @description OIDCトークンを用いてユーザー詳細を取得します。 OIDC UserInfo Endpointです。
+     *
+     * @tags me
+     * @name GetOidcUserInfo
+     * @summary 自分のユーザー詳細を取得 (OIDC UserInfo)
+     * @request GET:/users/me/oidc
+     * @secure
+     */
+    getOidcUserInfo: (params: RequestParams = {}) =>
+      this.request<OIDCUserInfo, any>({
+        path: `/users/me/oidc`,
+        method: 'GET',
+        secure: true,
+        format: 'json',
         ...params,
       }),
 
@@ -5650,6 +5777,23 @@ export class Api<SecurityDataType> extends HttpClient<SecurityDataType> {
         body: data,
         secure: true,
         type: ContentType.Json,
+        ...params,
+      }),
+
+    /**
+     * @description 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
+     *
+     * @tags oauth2
+     * @name RevokeClientTokens
+     * @summary OAuthクライアントのトークンを削除
+     * @request DELETE:/clients/{clientId}/tokens
+     * @secure
+     */
+    revokeClientTokens: (clientId: string, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/clients/${clientId}/tokens`,
+        method: 'DELETE',
+        secure: true,
         ...params,
       }),
 
