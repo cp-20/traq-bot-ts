@@ -48,16 +48,16 @@
     }
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.15.0",
-    "@biomejs/biome": "1.5.3",
-    "@changesets/cli": "^2.27.1",
-    "bun-types": "^1.0.30",
-    "esbuild": "^0.20.1",
+    "@arethetypeswrong/cli": "^0.15.3",
+    "@biomejs/biome": "1.8.3",
+    "@changesets/cli": "^2.27.7",
+    "bun-types": "^1.1.21",
+    "esbuild": "^0.23.0",
     "run-z": "^2.0.0",
-    "typescript": "5.3.3"
+    "typescript": "5.5.4"
   },
   "dependencies": {
-    "ws": "^8.16.0",
-    "zod": "^3.22.4"
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
   }
 }
