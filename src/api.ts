@@ -1,7 +1,5 @@
 /* eslint-disable */
 /* tslint:disable */
-// @ts-nocheck
-
 /*
  * ---------------------------------------------------------------
  * ## THIS FILE WAS GENERATED VIA SWAGGER-TYPESCRIPT-API        ##
@@ -15,7 +13,7 @@
  * Message
  * メッセージ
  */
-export default interface Message {
+export interface Message {
   /**
    * メッセージUUID
    * @format uuid
@@ -291,9 +289,9 @@ export interface MyChannelViewState {
  * 閲覧状態
  */
 export enum ChannelViewState {
-  None = 'none',
-  Monitoring = 'monitoring',
-  Editing = 'editing',
+  None = "none",
+  Monitoring = "monitoring",
+  Editing = "editing",
 }
 
 /**
@@ -319,8 +317,8 @@ export interface PostFileRequest {
  * @default "image"
  */
 export enum ThumbnailType {
-  Image = 'image',
-  Waveform = 'waveform',
+  Image = "image",
+  Waveform = "waveform",
 }
 
 export interface ThumbnailInfo {
@@ -1438,11 +1436,11 @@ export interface ActiveOAuth2Token {
  * OAuth2スコープ
  */
 export enum OAuth2Scope {
-  Openid = 'openid',
-  Profile = 'profile',
-  Read = 'read',
-  Write = 'write',
-  ManageBot = 'manage_bot',
+  Openid = "openid",
+  Profile = "profile",
+  Read = "read",
+  Write = "write",
+  ManageBot = "manage_bot",
 }
 
 /**
@@ -1578,8 +1576,8 @@ export interface PostClientRequest {
  * WebSocket: WebSocket Mode
  */
 export enum BotMode {
-  HTTP = 'HTTP',
-  WebSocket = 'WebSocket',
+  HTTP = "HTTP",
+  WebSocket = "WebSocket",
 }
 
 /**
@@ -1806,10 +1804,10 @@ export interface BotEventLog {
  * イベント配送結果
  */
 export enum BotEventResult {
-  OK = 'ok',
-  NG = 'ng',
-  NetworkError = 'ne',
-  Dropped = 'dp',
+  OK = "ok",
+  NG = "ng",
+  NetworkError = "ne",
+  Dropped = "dp",
 }
 
 /**
@@ -2049,15 +2047,15 @@ export interface ClippedMessage {
 export interface ChannelEvent {
   /** イベントタイプ */
   type:
-    | 'TopicChanged'
-    | 'SubscribersChanged'
-    | 'PinAdded'
-    | 'PinRemoved'
-    | 'NameChanged'
-    | 'ParentChanged'
-    | 'VisibilityChanged'
-    | 'ForcedNotificationChanged'
-    | 'ChildCreated';
+    | "TopicChanged"
+    | "SubscribersChanged"
+    | "PinAdded"
+    | "PinRemoved"
+    | "NameChanged"
+    | "ParentChanged"
+    | "VisibilityChanged"
+    | "ForcedNotificationChanged"
+    | "ChildCreated";
   /**
    * イベント日時
    * @format date-time
@@ -2460,13 +2458,13 @@ export interface OAuth2Authorization {
 }
 
 export enum OAuth2Prompt {
-  None = 'none',
+  None = "none",
 }
 
 export enum OAuth2ResponseType {
-  Code = 'code',
-  Token = 'token',
-  None = 'none',
+  Code = "code",
+  Token = "token",
+  None = "none",
 }
 
 /**
@@ -2514,89 +2512,89 @@ export interface PostUnlinkExternalAccount {
  * ユーザー権限
  */
 export enum UserPermission {
-  GetWebhook = 'get_webhook',
-  CreateWebhook = 'create_webhook',
-  EditWebhook = 'edit_webhook',
-  DeleteWebhook = 'delete_webhook',
-  AccessOthersWebhook = 'access_others_webhook',
-  GetBot = 'get_bot',
-  CreateBot = 'create_bot',
-  EditBot = 'edit_bot',
-  DeleteBot = 'delete_bot',
-  AccessOthersBot = 'access_others_bot',
-  BotActionJoinChannel = 'bot_action_join_channel',
-  BotActionLeaveChannel = 'bot_action_leave_channel',
-  CreateChannel = 'create_channel',
-  GetChannel = 'get_channel',
-  EditChannel = 'edit_channel',
-  DeleteChannel = 'delete_channel',
-  ChangeParentChannel = 'change_parent_channel',
-  EditChannelTopic = 'edit_channel_topic',
-  GetChannelStar = 'get_channel_star',
-  EditChannelStar = 'edit_channel_star',
-  GetMyTokens = 'get_my_tokens',
-  RevokeMyToken = 'revoke_my_token',
-  GetClients = 'get_clients',
-  CreateClient = 'create_client',
-  EditMyClient = 'edit_my_client',
-  DeleteMyClient = 'delete_my_client',
-  ManageOthersClient = 'manage_others_client',
-  UploadFile = 'upload_file',
-  DownloadFile = 'download_file',
-  DeleteFile = 'delete_file',
-  GetMessage = 'get_message',
-  PostMessage = 'post_message',
-  EditMessage = 'edit_message',
-  DeleteMessage = 'delete_message',
-  ReportMessage = 'report_message',
-  GetMessageReports = 'get_message_reports',
-  CreateMessagePin = 'create_message_pin',
-  DeleteMessagePin = 'delete_message_pin',
-  GetChannelSubscription = 'get_channel_subscription',
-  EditChannelSubscription = 'edit_channel_subscription',
-  ConnectNotificationStream = 'connect_notification_stream',
-  RegisterFCMDevice = 'register_fcm_device',
-  GetStamp = 'get_stamp',
-  CreateStamp = 'create_stamp',
-  EditStamp = 'edit_stamp',
-  EditStampCreatedByOthers = 'edit_stamp_created_by_others',
-  DeleteStamp = 'delete_stamp',
-  DeleteMyStamp = 'delete_my_stamp',
-  AddMessageStamp = 'add_message_stamp',
-  RemoveMessageStamp = 'remove_message_stamp',
-  GetMyStampHistory = 'get_my_stamp_history',
-  GetStampPalette = 'get_stamp_palette',
-  CreateStampPalette = 'create_stamp_palette',
-  EditStampPalette = 'edit_stamp_palette',
-  DeleteStampPalette = 'delete_stamp_palette',
-  GetUser = 'get_user',
-  RegisterUser = 'register_user',
-  GetMe = 'get_me',
-  GetOIDCUserInfo = 'get_oidc_userinfo',
-  EditMe = 'edit_me',
-  ChangeMyIcon = 'change_my_icon',
-  ChangeMyPassword = 'change_my_password',
-  EditOtherUsers = 'edit_other_users',
-  GetUserQRCode = 'get_user_qr_code',
-  GetUserTag = 'get_user_tag',
-  EditUserTag = 'edit_user_tag',
-  GetUserGroup = 'get_user_group',
-  CreateUserGroup = 'create_user_group',
-  CreateSpecialUserGroup = 'create_special_user_group',
-  EditUserGroup = 'edit_user_group',
-  DeleteUserGroup = 'delete_user_group',
-  AllUserGroupsAdmin = 'edit_others_user_group',
-  WebRTC = 'web_rtc',
-  GetMySessions = 'get_my_sessions',
-  DeleteMySessions = 'delete_my_sessions',
-  GetMyExternalAccount = 'get_my_external_account',
-  EditMyExternalAccount = 'edit_my_external_account',
-  GetUnread = 'get_unread',
-  DeleteUnread = 'delete_unread',
-  GetClipFolder = 'get_clip_folder',
-  CreateClipFolder = 'create_clip_folder',
-  EditClipFolder = 'edit_clip_folder',
-  DeleteClipFolder = 'delete_clip_folder',
+  GetWebhook = "get_webhook",
+  CreateWebhook = "create_webhook",
+  EditWebhook = "edit_webhook",
+  DeleteWebhook = "delete_webhook",
+  AccessOthersWebhook = "access_others_webhook",
+  GetBot = "get_bot",
+  CreateBot = "create_bot",
+  EditBot = "edit_bot",
+  DeleteBot = "delete_bot",
+  AccessOthersBot = "access_others_bot",
+  BotActionJoinChannel = "bot_action_join_channel",
+  BotActionLeaveChannel = "bot_action_leave_channel",
+  CreateChannel = "create_channel",
+  GetChannel = "get_channel",
+  EditChannel = "edit_channel",
+  DeleteChannel = "delete_channel",
+  ChangeParentChannel = "change_parent_channel",
+  EditChannelTopic = "edit_channel_topic",
+  GetChannelStar = "get_channel_star",
+  EditChannelStar = "edit_channel_star",
+  GetMyTokens = "get_my_tokens",
+  RevokeMyToken = "revoke_my_token",
+  GetClients = "get_clients",
+  CreateClient = "create_client",
+  EditMyClient = "edit_my_client",
+  DeleteMyClient = "delete_my_client",
+  ManageOthersClient = "manage_others_client",
+  UploadFile = "upload_file",
+  DownloadFile = "download_file",
+  DeleteFile = "delete_file",
+  GetMessage = "get_message",
+  PostMessage = "post_message",
+  EditMessage = "edit_message",
+  DeleteMessage = "delete_message",
+  ReportMessage = "report_message",
+  GetMessageReports = "get_message_reports",
+  CreateMessagePin = "create_message_pin",
+  DeleteMessagePin = "delete_message_pin",
+  GetChannelSubscription = "get_channel_subscription",
+  EditChannelSubscription = "edit_channel_subscription",
+  ConnectNotificationStream = "connect_notification_stream",
+  RegisterFCMDevice = "register_fcm_device",
+  GetStamp = "get_stamp",
+  CreateStamp = "create_stamp",
+  EditStamp = "edit_stamp",
+  EditStampCreatedByOthers = "edit_stamp_created_by_others",
+  DeleteStamp = "delete_stamp",
+  DeleteMyStamp = "delete_my_stamp",
+  AddMessageStamp = "add_message_stamp",
+  RemoveMessageStamp = "remove_message_stamp",
+  GetMyStampHistory = "get_my_stamp_history",
+  GetStampPalette = "get_stamp_palette",
+  CreateStampPalette = "create_stamp_palette",
+  EditStampPalette = "edit_stamp_palette",
+  DeleteStampPalette = "delete_stamp_palette",
+  GetUser = "get_user",
+  RegisterUser = "register_user",
+  GetMe = "get_me",
+  GetOIDCUserInfo = "get_oidc_userinfo",
+  EditMe = "edit_me",
+  ChangeMyIcon = "change_my_icon",
+  ChangeMyPassword = "change_my_password",
+  EditOtherUsers = "edit_other_users",
+  GetUserQRCode = "get_user_qr_code",
+  GetUserTag = "get_user_tag",
+  EditUserTag = "edit_user_tag",
+  GetUserGroup = "get_user_group",
+  CreateUserGroup = "create_user_group",
+  CreateSpecialUserGroup = "create_special_user_group",
+  EditUserGroup = "edit_user_group",
+  DeleteUserGroup = "delete_user_group",
+  AllUserGroupsAdmin = "edit_others_user_group",
+  WebRTC = "web_rtc",
+  GetMySessions = "get_my_sessions",
+  DeleteMySessions = "delete_my_sessions",
+  GetMyExternalAccount = "get_my_external_account",
+  EditMyExternalAccount = "edit_my_external_account",
+  GetUnread = "get_unread",
+  DeleteUnread = "delete_unread",
+  GetClipFolder = "get_clip_folder",
+  CreateClipFolder = "create_clip_folder",
+  EditClipFolder = "edit_clip_folder",
+  DeleteClipFolder = "delete_clip_folder",
 }
 
 /**
@@ -2716,9 +2714,9 @@ export interface Session {
 }
 
 export type QueryParamsType = Record<string | number, any>;
-export type ResponseFormat = keyof Omit<Body, 'body' | 'bodyUsed'>;
+export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
 
-export interface FullRequestParams extends Omit<RequestInit, 'body'> {
+export interface FullRequestParams extends Omit<RequestInit, "body"> {
   /** set parameter to `true` for call `securityWorker` for this request */
   secure?: boolean;
   /** request path */
@@ -2737,22 +2735,16 @@ export interface FullRequestParams extends Omit<RequestInit, 'body'> {
   cancelToken?: CancelToken;
 }
 
-export type RequestParams = Omit<
-  FullRequestParams,
-  'body' | 'method' | 'query' | 'path'
->;
+export type RequestParams = Omit<FullRequestParams, "body" | "method" | "query" | "path">;
 
 export interface ApiConfig<SecurityDataType = unknown> {
   baseUrl?: string;
-  baseApiParams?: Omit<RequestParams, 'baseUrl' | 'cancelToken' | 'signal'>;
-  securityWorker?: (
-    securityData: SecurityDataType | null
-  ) => Promise<RequestParams | void> | RequestParams | void;
+  baseApiParams?: Omit<RequestParams, "baseUrl" | "cancelToken" | "signal">;
+  securityWorker?: (securityData: SecurityDataType | null) => Promise<RequestParams | void> | RequestParams | void;
   customFetch?: typeof fetch;
 }
 
-export interface HttpResponse<D extends unknown, E extends unknown = unknown>
-  extends Response {
+export interface HttpResponse<D extends unknown, E extends unknown = unknown> extends Response {
   data: D;
   error: E;
 }
@@ -2760,25 +2752,24 @@ export interface HttpResponse<D extends unknown, E extends unknown = unknown>
 type CancelToken = Symbol | string | number;
 
 export enum ContentType {
-  Json = 'application/json',
-  FormData = 'multipart/form-data',
-  UrlEncoded = 'application/x-www-form-urlencoded',
-  Text = 'text/plain',
+  Json = "application/json",
+  FormData = "multipart/form-data",
+  UrlEncoded = "application/x-www-form-urlencoded",
+  Text = "text/plain",
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl: string = 'https://q.trap.jp/api/v3';
+  public baseUrl: string = "https://q.trap.jp/api/v3";
   private securityData: SecurityDataType | null = null;
-  private securityWorker?: ApiConfig<SecurityDataType>['securityWorker'];
+  private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
   private abortControllers = new Map<CancelToken, AbortController>();
-  private customFetch = (...fetchParams: Parameters<typeof fetch>) =>
-    fetch(...fetchParams);
+  private customFetch = (...fetchParams: Parameters<typeof fetch>) => fetch(...fetchParams);
 
   private baseApiParams: RequestParams = {
-    credentials: 'same-origin',
+    credentials: "same-origin",
     headers: {},
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
+    redirect: "follow",
+    referrerPolicy: "no-referrer",
   };
 
   constructor(apiConfig: ApiConfig<SecurityDataType> = {}) {
@@ -2791,9 +2782,7 @@ export class HttpClient<SecurityDataType = unknown> {
 
   protected encodeQueryParam(key: string, value: any) {
     const encodedKey = encodeURIComponent(key);
-    return `${encodedKey}=${encodeURIComponent(
-      typeof value === 'number' ? value : `${value}`
-    )}`;
+    return `${encodedKey}=${encodeURIComponent(typeof value === "number" ? value : `${value}`)}`;
   }
 
   protected addQueryParam(query: QueryParamsType, key: string) {
@@ -2802,57 +2791,43 @@ export class HttpClient<SecurityDataType = unknown> {
 
   protected addArrayQueryParam(query: QueryParamsType, key: string) {
     const value = query[key];
-    return value.map((v: any) => this.encodeQueryParam(key, v)).join('&');
+    return value.map((v: any) => this.encodeQueryParam(key, v)).join("&");
   }
 
   protected toQueryString(rawQuery?: QueryParamsType): string {
     const query = rawQuery || {};
-    const keys = Object.keys(query).filter(
-      (key) => 'undefined' !== typeof query[key]
-    );
+    const keys = Object.keys(query).filter((key) => "undefined" !== typeof query[key]);
     return keys
-      .map((key) =>
-        Array.isArray(query[key])
-          ? this.addArrayQueryParam(query, key)
-          : this.addQueryParam(query, key)
-      )
-      .join('&');
+      .map((key) => (Array.isArray(query[key]) ? this.addArrayQueryParam(query, key) : this.addQueryParam(query, key)))
+      .join("&");
   }
 
   protected addQueryParams(rawQuery?: QueryParamsType): string {
     const queryString = this.toQueryString(rawQuery);
-    return queryString ? `?${queryString}` : '';
+    return queryString ? `?${queryString}` : "";
   }
 
   private contentFormatters: Record<ContentType, (input: any) => any> = {
     [ContentType.Json]: (input: any) =>
-      input !== null && (typeof input === 'object' || typeof input === 'string')
-        ? JSON.stringify(input)
-        : input,
-    [ContentType.Text]: (input: any) =>
-      input !== null && typeof input !== 'string'
-        ? JSON.stringify(input)
-        : input,
-    [ContentType.FormData]: (input: FormData) =>
-      (Array.from(input.keys()) || []).reduce((formData, key) => {
-        const property = input.get(key);
+      input !== null && (typeof input === "object" || typeof input === "string") ? JSON.stringify(input) : input,
+    [ContentType.Text]: (input: any) => (input !== null && typeof input !== "string" ? JSON.stringify(input) : input),
+    [ContentType.FormData]: (input: any) =>
+      Object.keys(input || {}).reduce((formData, key) => {
+        const property = input[key];
         formData.append(
           key,
           property instanceof Blob
             ? property
-            : typeof property === 'object' && property !== null
-            ? JSON.stringify(property)
-            : `${property}`
+            : typeof property === "object" && property !== null
+              ? JSON.stringify(property)
+              : `${property}`,
         );
         return formData;
       }, new FormData()),
     [ContentType.UrlEncoded]: (input: any) => this.toQueryString(input),
   };
 
-  protected mergeRequestParams(
-    params1: RequestParams,
-    params2?: RequestParams
-  ): RequestParams {
+  protected mergeRequestParams(params1: RequestParams, params2?: RequestParams): RequestParams {
     return {
       ...this.baseApiParams,
       ...params1,
@@ -2865,9 +2840,7 @@ export class HttpClient<SecurityDataType = unknown> {
     };
   }
 
-  protected createAbortSignal = (
-    cancelToken: CancelToken
-  ): AbortSignal | undefined => {
+  protected createAbortSignal = (cancelToken: CancelToken): AbortSignal | undefined => {
     if (this.abortControllers.has(cancelToken)) {
       const abortController = this.abortControllers.get(cancelToken);
       if (abortController) {
@@ -2902,7 +2875,7 @@ export class HttpClient<SecurityDataType = unknown> {
     ...params
   }: FullRequestParams): Promise<HttpResponse<T, E>> => {
     const secureParams =
-      ((typeof secure === 'boolean' ? secure : this.baseApiParams.secure) &&
+      ((typeof secure === "boolean" ? secure : this.baseApiParams.secure) &&
         this.securityWorker &&
         (await this.securityWorker(this.securityData))) ||
       {};
@@ -2911,28 +2884,15 @@ export class HttpClient<SecurityDataType = unknown> {
     const payloadFormatter = this.contentFormatters[type || ContentType.Json];
     const responseFormat = format || requestParams.format;
 
-    return this.customFetch(
-      `${baseUrl || this.baseUrl || ''}${path}${
-        queryString ? `?${queryString}` : ''
-      }`,
-      {
-        ...requestParams,
-        headers: {
-          ...(requestParams.headers || {}),
-          ...(type && type !== ContentType.FormData
-            ? { 'Content-Type': type }
-            : {}),
-        },
-        signal:
-          (cancelToken
-            ? this.createAbortSignal(cancelToken)
-            : requestParams.signal) || null,
-        body:
-          typeof body === 'undefined' || body === null
-            ? null
-            : payloadFormatter(body),
-      }
-    ).then(async (response) => {
+    return this.customFetch(`${baseUrl || this.baseUrl || ""}${path}${queryString ? `?${queryString}` : ""}`, {
+      ...requestParams,
+      headers: {
+        ...(requestParams.headers || {}),
+        ...(type && type !== ContentType.FormData ? { "Content-Type": type } : {}),
+      },
+      signal: (cancelToken ? this.createAbortSignal(cancelToken) : requestParams.signal) || null,
+      body: typeof body === "undefined" || body === null ? null : payloadFormatter(body),
+    }).then(async (response) => {
       const r = response.clone() as HttpResponse<T, E>;
       r.data = null as unknown as T;
       r.error = null as unknown as E;
@@ -2972,9 +2932,7 @@ export class HttpClient<SecurityDataType = unknown> {
  *
  * traQ v3 API
  */
-export class Api<
-  SecurityDataType extends unknown
-> extends HttpClient<SecurityDataType> {
+export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDataType> {
   channels = {
     /**
      * @description 指定したチャンネルにメッセージを投稿します。 embedをtrueに指定すると、メッセージ埋め込みが自動で行われます。 アーカイブされているチャンネルに投稿することはできません。
@@ -2985,18 +2943,14 @@ export class Api<
      * @request POST:/channels/{channelId}/messages
      * @secure
      */
-    postMessage: (
-      channelId: string,
-      data: PostMessageRequest,
-      params: RequestParams = {}
-    ) =>
+    postMessage: (channelId: string, data: PostMessageRequest, params: RequestParams = {}) =>
       this.request<Message, void>({
         path: `/channels/${channelId}/messages`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3047,16 +3001,16 @@ export class Api<
          * 昇順か降順か
          * @default "desc"
          */
-        order?: 'asc' | 'desc';
+        order?: "asc" | "desc";
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<Message[], void>({
         path: `/channels/${channelId}/messages`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3072,9 +3026,9 @@ export class Api<
     getChannelStats: (channelId: string, params: RequestParams = {}) =>
       this.request<ChannelStats, void>({
         path: `/channels/${channelId}/stats`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3090,9 +3044,9 @@ export class Api<
     getChannelTopic: (channelId: string, params: RequestParams = {}) =>
       this.request<ChannelTopic, void>({
         path: `/channels/${channelId}/topic`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3105,14 +3059,10 @@ export class Api<
      * @request PUT:/channels/{channelId}/topic
      * @secure
      */
-    editChannelTopic: (
-      channelId: string,
-      data: PutChannelTopicRequest,
-      params: RequestParams = {}
-    ) =>
+    editChannelTopic: (channelId: string, data: PutChannelTopicRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/channels/${channelId}/topic`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -3131,9 +3081,9 @@ export class Api<
     getChannelViewers: (channelId: string, params: RequestParams = {}) =>
       this.request<ChannelViewer[], void>({
         path: `/channels/${channelId}/viewers`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3149,9 +3099,9 @@ export class Api<
     getChannelPins: (channelId: string, params: RequestParams = {}) =>
       this.request<Pin[], void>({
         path: `/channels/${channelId}/pins`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3167,9 +3117,9 @@ export class Api<
     getChannelSubscribers: (channelId: string, params: RequestParams = {}) =>
       this.request<string[], void>({
         path: `/channels/${channelId}/subscribers`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3182,14 +3132,10 @@ export class Api<
      * @request PATCH:/channels/{channelId}/subscribers
      * @secure
      */
-    editChannelSubscribers: (
-      channelId: string,
-      data: PatchChannelSubscribersRequest,
-      params: RequestParams = {}
-    ) =>
+    editChannelSubscribers: (channelId: string, data: PatchChannelSubscribersRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/channels/${channelId}/subscribers`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -3205,14 +3151,10 @@ export class Api<
      * @request PUT:/channels/{channelId}/subscribers
      * @secure
      */
-    setChannelSubscribers: (
-      channelId: string,
-      data: PutChannelSubscribersRequest,
-      params: RequestParams = {}
-    ) =>
+    setChannelSubscribers: (channelId: string, data: PutChannelSubscribersRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/channels/${channelId}/subscribers`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -3231,11 +3173,11 @@ export class Api<
     createChannel: (data: PostChannelRequest, params: RequestParams = {}) =>
       this.request<Channel, void>({
         path: `/channels`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3254,16 +3196,16 @@ export class Api<
          * ダイレクトメッセージチャンネルをレスポンスに含めるかどうか
          * @default false
          */
-        'include-dm'?: boolean;
+        "include-dm"?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<ChannelList, any>({
         path: `/channels`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3279,9 +3221,9 @@ export class Api<
     getChannelBots: (channelId: string, params: RequestParams = {}) =>
       this.request<BotUser[], void>({
         path: `/channels/${channelId}/bots`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3297,9 +3239,9 @@ export class Api<
     getChannel: (channelId: string, params: RequestParams = {}) =>
       this.request<Channel, void>({
         path: `/channels/${channelId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3312,14 +3254,10 @@ export class Api<
      * @request PATCH:/channels/{channelId}
      * @secure
      */
-    editChannel: (
-      channelId: string,
-      data: PatchChannelRequest,
-      params: RequestParams = {}
-    ) =>
+    editChannel: (channelId: string, data: PatchChannelRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/channels/${channelId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -3373,16 +3311,16 @@ export class Api<
          * 昇順か降順か
          * @default "desc"
          */
-        order?: 'asc' | 'desc';
+        order?: "asc" | "desc";
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<ChannelEvent[], void>({
         path: `/channels/${channelId}/events`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -3464,9 +3402,9 @@ export class Api<
          * ソート順 (作成日時が新しい `createdAt`, 作成日時が古い `-createdAt`, 更新日時が新しい `updatedAt`, 更新日時が古い `-updatedAt`)
          * @default "-createdAt"
          */
-        sort?: 'createdAt' | '-createdAt' | 'updatedAt' | '-updatedAt';
+        sort?: "createdAt" | "-createdAt" | "updatedAt" | "-updatedAt";
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<
         {
@@ -3481,10 +3419,10 @@ export class Api<
         void
       >({
         path: `/messages`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3500,9 +3438,9 @@ export class Api<
     getMessage: (messageId: string, params: RequestParams = {}) =>
       this.request<Message, void>({
         path: `/messages/${messageId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3515,14 +3453,10 @@ export class Api<
      * @request PUT:/messages/{messageId}
      * @secure
      */
-    editMessage: (
-      messageId: string,
-      data: PostMessageRequest,
-      params: RequestParams = {}
-    ) =>
+    editMessage: (messageId: string, data: PostMessageRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/messages/${messageId}`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -3541,7 +3475,7 @@ export class Api<
     deleteMessage: (messageId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/messages/${messageId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -3558,9 +3492,9 @@ export class Api<
     getPin: (messageId: string, params: RequestParams = {}) =>
       this.request<MessagePin, void>({
         path: `/messages/${messageId}/pin`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3576,9 +3510,9 @@ export class Api<
     createPin: (messageId: string, params: RequestParams = {}) =>
       this.request<MessagePin, void>({
         path: `/messages/${messageId}/pin`,
-        method: 'POST',
+        method: "POST",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3594,7 +3528,7 @@ export class Api<
     removePin: (messageId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/messages/${messageId}/pin`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -3611,9 +3545,9 @@ export class Api<
     getMessageStamps: (messageId: string, params: RequestParams = {}) =>
       this.request<MessageStamp[], void>({
         path: `/messages/${messageId}/stamps`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3626,15 +3560,10 @@ export class Api<
      * @request POST:/messages/{messageId}/stamps/{stampId}
      * @secure
      */
-    addMessageStamp: (
-      messageId: string,
-      stampId: string,
-      data: PostMessageStampRequest,
-      params: RequestParams = {}
-    ) =>
+    addMessageStamp: (messageId: string, stampId: string, data: PostMessageStampRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/messages/${messageId}/stamps/${stampId}`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -3650,14 +3579,10 @@ export class Api<
      * @request DELETE:/messages/{messageId}/stamps/{stampId}
      * @secure
      */
-    removeMessageStamp: (
-      messageId: string,
-      stampId: string,
-      params: RequestParams = {}
-    ) =>
+    removeMessageStamp: (messageId: string, stampId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/messages/${messageId}/stamps/${stampId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -3674,9 +3599,9 @@ export class Api<
     getMessageClips: (messageId: string, params: RequestParams = {}) =>
       this.request<MessageClip[], void>({
         path: `/messages/${messageId}/clips`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -3693,11 +3618,11 @@ export class Api<
     postFile: (data: PostFileRequest, params: RequestParams = {}) =>
       this.request<FileInfo, void>({
         path: `/files`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.FormData,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3752,21 +3677,21 @@ export class Api<
          * 昇順か降順か
          * @default "desc"
          */
-        order?: 'asc' | 'desc';
+        order?: "asc" | "desc";
         /**
          * アップロード者が自分のファイルのみを取得するか
          * @default false
          */
         mine?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<FileInfo[], void>({
         path: `/files`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3782,9 +3707,9 @@ export class Api<
     getFileMeta: (fileId: string, params: RequestParams = {}) =>
       this.request<FileInfo, void>({
         path: `/files/${fileId}/meta`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3803,14 +3728,14 @@ export class Api<
         /** 取得するサムネイルのタイプ */
         type?: ThumbnailType;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<File, void>({
         path: `/files/${fileId}/thumbnail`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'blob',
+        format: "blob",
         ...params,
       }),
 
@@ -3829,11 +3754,11 @@ export class Api<
         /** 1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます */
         dl?: number;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<File, void>({
         path: `/files/${fileId}`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
         ...params,
@@ -3851,7 +3776,7 @@ export class Api<
     deleteFile: (fileId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/files/${fileId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -3869,9 +3794,9 @@ export class Api<
     getStamp: (stampId: string, params: RequestParams = {}) =>
       this.request<Stamp, void>({
         path: `/stamps/${stampId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3887,7 +3812,7 @@ export class Api<
     deleteStamp: (stampId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/stamps/${stampId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -3901,14 +3826,10 @@ export class Api<
      * @request PATCH:/stamps/{stampId}
      * @secure
      */
-    editStamp: (
-      stampId: string,
-      data: PatchStampRequest,
-      params: RequestParams = {}
-    ) =>
+    editStamp: (stampId: string, data: PatchStampRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/stamps/${stampId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -3927,11 +3848,11 @@ export class Api<
     createStamp: (data: PostStampRequest, params: RequestParams = {}) =>
       this.request<Stamp, void>({
         path: `/stamps`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.FormData,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3952,18 +3873,18 @@ export class Api<
          * @deprecated
          * @default true
          */
-        'include-unicode'?: boolean;
+        "include-unicode"?: boolean;
         /** 取得するスタンプの種類 */
-        type?: 'unicode' | 'original';
+        type?: "unicode" | "original";
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<StampWithThumbnail[], any>({
         path: `/stamps`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3979,9 +3900,9 @@ export class Api<
     getStampStats: (stampId: string, params: RequestParams = {}) =>
       this.request<StampStats, void>({
         path: `/stamps/${stampId}/stats`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -3997,9 +3918,9 @@ export class Api<
     getStampImage: (stampId: string, params: RequestParams = {}) =>
       this.request<File, void>({
         path: `/stamps/${stampId}/image`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'blob',
+        format: "blob",
         ...params,
       }),
 
@@ -4021,11 +3942,11 @@ export class Api<
          */
         file: File;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<void, void>({
         path: `/stamps/${stampId}/image`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.FormData,
@@ -4052,14 +3973,14 @@ export class Api<
          */
         limit?: number;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<StampHistoryEntry[], any>({
         path: `/users/me/stamp-history`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4080,14 +4001,14 @@ export class Api<
          */
         token?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<File, any>({
         path: `/users/me/qr-code`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'blob',
+        format: "blob",
         ...params,
       }),
 
@@ -4103,9 +4024,9 @@ export class Api<
     getUser: (userId: string, params: RequestParams = {}) =>
       this.request<UserDetail, void>({
         path: `/users/${userId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4118,14 +4039,10 @@ export class Api<
      * @request PATCH:/users/{userId}
      * @secure
      */
-    editUser: (
-      userId: string,
-      data: PatchUserRequest,
-      params: RequestParams = {}
-    ) =>
+    editUser: (userId: string, data: PatchUserRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/${userId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4144,9 +4061,9 @@ export class Api<
     getMe: (params: RequestParams = {}) =>
       this.request<MyUserDetail, any>({
         path: `/users/me`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4162,7 +4079,7 @@ export class Api<
     editMe: (data: PatchMeRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4181,9 +4098,9 @@ export class Api<
     getOidcUserInfo: (params: RequestParams = {}) =>
       this.request<OIDCUserInfo, any>({
         path: `/users/me/oidc`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4196,18 +4113,14 @@ export class Api<
      * @request POST:/users/{userId}/messages
      * @secure
      */
-    postDirectMessage: (
-      userId: string,
-      data: PostMessageRequest,
-      params: RequestParams = {}
-    ) =>
+    postDirectMessage: (userId: string, data: PostMessageRequest, params: RequestParams = {}) =>
       this.request<Message, void>({
         path: `/users/${userId}/messages`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4258,16 +4171,16 @@ export class Api<
          * 昇順か降順か
          * @default "desc"
          */
-        order?: 'asc' | 'desc';
+        order?: "asc" | "desc";
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<Message[], void>({
         path: `/users/${userId}/messages`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4283,9 +4196,9 @@ export class Api<
     getUserStats: (userId: string, params: RequestParams = {}) =>
       this.request<UserStats, void>({
         path: `/users/${userId}/stats`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4301,9 +4214,9 @@ export class Api<
     getMyChannelSubscriptions: (params: RequestParams = {}) =>
       this.request<UserSubscribeState[], any>({
         path: `/users/me/subscriptions`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4316,14 +4229,10 @@ export class Api<
      * @request PUT:/users/me/subscriptions/{channelId}
      * @secure
      */
-    setChannelSubscribeLevel: (
-      channelId: string,
-      data: PutChannelSubscribeLevelRequest,
-      params: RequestParams = {}
-    ) =>
+    setChannelSubscribeLevel: (channelId: string, data: PutChannelSubscribeLevelRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/subscriptions/${channelId}`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4342,9 +4251,9 @@ export class Api<
     getUserIcon: (userId: string, params: RequestParams = {}) =>
       this.request<File, void>({
         path: `/users/${userId}/icon`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'blob',
+        format: "blob",
         ...params,
       }),
 
@@ -4357,14 +4266,10 @@ export class Api<
      * @request PUT:/users/{userId}/icon
      * @secure
      */
-    changeUserIcon: (
-      userId: string,
-      data: PutUserIconRequest,
-      params: RequestParams = {}
-    ) =>
+    changeUserIcon: (userId: string, data: PutUserIconRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/${userId}/icon`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.FormData,
@@ -4383,9 +4288,9 @@ export class Api<
     getMyIcon: (params: RequestParams = {}) =>
       this.request<File, void>({
         path: `/users/me/icon`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'blob',
+        format: "blob",
         ...params,
       }),
 
@@ -4401,7 +4306,7 @@ export class Api<
     changeMyIcon: (data: PutUserIconRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/icon`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.FormData,
@@ -4417,13 +4322,10 @@ export class Api<
      * @request PUT:/users/me/password
      * @secure
      */
-    changeMyPassword: (
-      data: PutMyPasswordRequest,
-      params: RequestParams = {}
-    ) =>
+    changeMyPassword: (data: PutMyPasswordRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/password`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4439,14 +4341,10 @@ export class Api<
      * @request PUT:/users/{userId}/password
      * @secure
      */
-    changeUserPassword: (
-      userId: string,
-      data: PutUserPasswordRequest,
-      params: RequestParams = {}
-    ) =>
+    changeUserPassword: (userId: string, data: PutUserPasswordRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/${userId}/password`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4462,13 +4360,10 @@ export class Api<
      * @request POST:/users/me/fcm-device
      * @secure
      */
-    registerFcmDevice: (
-      data: PostMyFCMDeviceRequest,
-      params: RequestParams = {}
-    ) =>
+    registerFcmDevice: (data: PostMyFCMDeviceRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/fcm-device`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4487,9 +4382,9 @@ export class Api<
     getMyViewStates: (params: RequestParams = {}) =>
       this.request<MyChannelViewState[], any>({
         path: `/users/me/view-states`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4505,11 +4400,11 @@ export class Api<
     createUser: (data: PostUserRequest, params: RequestParams = {}) =>
       this.request<UserDetail, void>({
         path: `/users`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4528,18 +4423,18 @@ export class Api<
          * アカウントがアクティブでないユーザーを含め、全てのユーザーを取得するかどうか
          * @default false
          */
-        'include-suspended'?: boolean;
+        "include-suspended"?: boolean;
         /** 名前が一致するアカウントのみを取得する */
         name?: string;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<User[], void>({
         path: `/users`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4555,9 +4450,9 @@ export class Api<
     getUserTags: (userId: string, params: RequestParams = {}) =>
       this.request<UserTag[], void>({
         path: `/users/${userId}/tags`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4570,18 +4465,14 @@ export class Api<
      * @request POST:/users/{userId}/tags
      * @secure
      */
-    addUserTag: (
-      userId: string,
-      data: PostUserTagRequest,
-      params: RequestParams = {}
-    ) =>
+    addUserTag: (userId: string, data: PostUserTagRequest, params: RequestParams = {}) =>
       this.request<UserTag, void>({
         path: `/users/${userId}/tags`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4594,15 +4485,10 @@ export class Api<
      * @request PATCH:/users/{userId}/tags/{tagId}
      * @secure
      */
-    editUserTag: (
-      userId: string,
-      tagId: string,
-      data: PatchUserTagRequest,
-      params: RequestParams = {}
-    ) =>
+    editUserTag: (userId: string, tagId: string, data: PatchUserTagRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/${userId}/tags/${tagId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4618,14 +4504,10 @@ export class Api<
      * @request DELETE:/users/{userId}/tags/{tagId}
      * @secure
      */
-    removeUserTag: (
-      userId: string,
-      tagId: string,
-      params: RequestParams = {}
-    ) =>
+    removeUserTag: (userId: string, tagId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/${userId}/tags/${tagId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -4642,9 +4524,9 @@ export class Api<
     getMyUserTags: (params: RequestParams = {}) =>
       this.request<UserTag[], any>({
         path: `/users/me/tags`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4660,11 +4542,11 @@ export class Api<
     addMyUserTag: (data: PostUserTagRequest, params: RequestParams = {}) =>
       this.request<UserTag, void>({
         path: `/users/me/tags`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4680,7 +4562,7 @@ export class Api<
     removeMyUserTag: (tagId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/tags/${tagId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -4694,14 +4576,10 @@ export class Api<
      * @request PATCH:/users/me/tags/{tagId}
      * @secure
      */
-    editMyUserTag: (
-      tagId: string,
-      data: PatchUserTagRequest,
-      params: RequestParams = {}
-    ) =>
+    editMyUserTag: (tagId: string, data: PatchUserTagRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/tags/${tagId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4720,9 +4598,9 @@ export class Api<
     getMyStars: (params: RequestParams = {}) =>
       this.request<string[], any>({
         path: `/users/me/stars`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4738,7 +4616,7 @@ export class Api<
     addMyStar: (data: PostStarRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/stars`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4757,7 +4635,7 @@ export class Api<
     removeMyStar: (channelId: string, params: RequestParams = {}) =>
       this.request<void, any>({
         path: `/users/me/stars/${channelId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -4774,9 +4652,9 @@ export class Api<
     getMyUnreadChannels: (params: RequestParams = {}) =>
       this.request<UnreadChannel[], any>({
         path: `/users/me/unread`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4792,9 +4670,9 @@ export class Api<
     getMySessions: (params: RequestParams = {}) =>
       this.request<LoginSession[], any>({
         path: `/users/me/sessions`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4810,7 +4688,7 @@ export class Api<
     revokeMySession: (sessionId: string, params: RequestParams = {}) =>
       this.request<void, any>({
         path: `/users/me/sessions/${sessionId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -4827,9 +4705,9 @@ export class Api<
     getMyTokens: (params: RequestParams = {}) =>
       this.request<ActiveOAuth2Token[], any>({
         path: `/users/me/tokens`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4845,7 +4723,7 @@ export class Api<
     revokeMyToken: (tokenId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/tokens/${tokenId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -4862,7 +4740,7 @@ export class Api<
     readChannel: (channelId: string, params: RequestParams = {}) =>
       this.request<void, any>({
         path: `/users/me/unread/${channelId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -4879,9 +4757,9 @@ export class Api<
     getMyExternalAccounts: (params: RequestParams = {}) =>
       this.request<ExternalProviderUser[], any>({
         path: `/users/me/ex-accounts`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4894,13 +4772,10 @@ export class Api<
      * @request POST:/users/me/ex-accounts/link
      * @secure
      */
-    linkExternalAccount: (
-      data: PostLinkExternalAccount,
-      params: RequestParams = {}
-    ) =>
+    linkExternalAccount: (data: PostLinkExternalAccount, params: RequestParams = {}) =>
       this.request<any, void>({
         path: `/users/me/ex-accounts/link`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4916,13 +4791,10 @@ export class Api<
      * @request POST:/users/me/ex-accounts/unlink
      * @secure
      */
-    unlinkExternalAccount: (
-      data: PostUnlinkExternalAccount,
-      params: RequestParams = {}
-    ) =>
+    unlinkExternalAccount: (data: PostUnlinkExternalAccount, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/ex-accounts/unlink`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -4941,9 +4813,9 @@ export class Api<
     getUserDmChannel: (userId: string, params: RequestParams = {}) =>
       this.request<DMChannel, void>({
         path: `/users/${userId}/dm-channel`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4959,9 +4831,9 @@ export class Api<
     getUserSettings: (params: RequestParams = {}) =>
       this.request<UserSettings, any>({
         path: `/users/me/settings`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4977,9 +4849,9 @@ export class Api<
     getMyNotifyCitation: (params: RequestParams = {}) =>
       this.request<GetNotifyCitation, any>({
         path: `/users/me/settings/notify-citation`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -4992,13 +4864,10 @@ export class Api<
      * @request PUT:/users/me/settings/notify-citation
      * @secure
      */
-    changeMyNotifyCitation: (
-      data: PutNotifyCitationRequest,
-      params: RequestParams = {}
-    ) =>
+    changeMyNotifyCitation: (data: PutNotifyCitationRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/users/me/settings/notify-citation`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -5018,9 +4887,9 @@ export class Api<
     getUserGroup: (groupId: string, params: RequestParams = {}) =>
       this.request<UserGroup, void>({
         path: `/groups/${groupId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5036,7 +4905,7 @@ export class Api<
     deleteUserGroup: (groupId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/groups/${groupId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -5050,14 +4919,10 @@ export class Api<
      * @request PATCH:/groups/{groupId}
      * @secure
      */
-    editUserGroup: (
-      groupId: string,
-      data: PatchUserGroupRequest,
-      params: RequestParams = {}
-    ) =>
+    editUserGroup: (groupId: string, data: PatchUserGroupRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/groups/${groupId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -5073,14 +4938,10 @@ export class Api<
      * @request PUT:/groups/{groupId}/icon
      * @secure
      */
-    changeUserGroupIcon: (
-      groupId: string,
-      data: PutUserIconRequest,
-      params: RequestParams = {}
-    ) =>
+    changeUserGroupIcon: (groupId: string, data: PutUserIconRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/groups/${groupId}/icon`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.FormData,
@@ -5099,9 +4960,9 @@ export class Api<
     getUserGroupMembers: (groupId: string, params: RequestParams = {}) =>
       this.request<UserGroupMember[], void>({
         path: `/groups/${groupId}/members`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5114,14 +4975,10 @@ export class Api<
      * @request POST:/groups/{groupId}/members
      * @secure
      */
-    addUserGroupMember: (
-      groupId: string,
-      data: UserGroupMember,
-      params: RequestParams = {}
-    ) =>
+    addUserGroupMember: (groupId: string, data: UserGroupMember, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/groups/${groupId}/members`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -5137,14 +4994,10 @@ export class Api<
      * @request DELETE:/groups/{groupId}/members/{userId}
      * @secure
      */
-    removeUserGroupMember: (
-      groupId: string,
-      userId: string,
-      params: RequestParams = {}
-    ) =>
+    removeUserGroupMember: (groupId: string, userId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/groups/${groupId}/members/${userId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -5158,15 +5011,10 @@ export class Api<
      * @request PATCH:/groups/{groupId}/members/{userId}
      * @secure
      */
-    editUserGroupMember: (
-      groupId: string,
-      userId: string,
-      data: PatchGroupMemberRequest,
-      params: RequestParams = {}
-    ) =>
+    editUserGroupMember: (groupId: string, userId: string, data: PatchGroupMemberRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/groups/${groupId}/members/${userId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -5185,9 +5033,9 @@ export class Api<
     getUserGroups: (params: RequestParams = {}) =>
       this.request<UserGroup[], any>({
         path: `/groups`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5203,11 +5051,11 @@ export class Api<
     createUserGroup: (data: PostUserGroupRequest, params: RequestParams = {}) =>
       this.request<UserGroup, void>({
         path: `/groups`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5220,14 +5068,10 @@ export class Api<
      * @request DELETE:/groups/{groupId}/admins/{userId}
      * @secure
      */
-    removeUserGroupAdmin: (
-      groupId: string,
-      userId: string,
-      params: RequestParams = {}
-    ) =>
+    removeUserGroupAdmin: (groupId: string, userId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/groups/${groupId}/admins/${userId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -5241,14 +5085,10 @@ export class Api<
      * @request POST:/groups/{groupId}/admins
      * @secure
      */
-    addUserGroupAdmin: (
-      groupId: string,
-      data: PostUserGroupAdminRequest,
-      params: RequestParams = {}
-    ) =>
+    addUserGroupAdmin: (groupId: string, data: PostUserGroupAdminRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/groups/${groupId}/admins`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -5267,9 +5107,9 @@ export class Api<
     getUserGroupAdmins: (groupId: string, params: RequestParams = {}) =>
       this.request<string[], void>({
         path: `/groups/${groupId}/admins`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -5291,14 +5131,14 @@ export class Api<
          */
         all?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<Webhook[], any>({
         path: `/webhooks`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5314,11 +5154,11 @@ export class Api<
     createWebhook: (data: PostWebhookRequest, params: RequestParams = {}) =>
       this.request<Webhook, void>({
         path: `/webhooks`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5334,9 +5174,9 @@ export class Api<
     getWebhook: (webhookId: string, params: RequestParams = {}) =>
       this.request<Webhook, void>({
         path: `/webhooks/${webhookId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5359,11 +5199,11 @@ export class Api<
          */
         embed?: number;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<void, void>({
         path: `/webhooks/${webhookId}`,
-        method: 'POST',
+        method: "POST",
         query: query,
         body: data,
         secure: true,
@@ -5383,7 +5223,7 @@ export class Api<
     deleteWebhook: (webhookId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/webhooks/${webhookId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -5397,14 +5237,10 @@ export class Api<
      * @request PATCH:/webhooks/{webhookId}
      * @secure
      */
-    editWebhook: (
-      webhookId: string,
-      data: PatchWebhookRequest,
-      params: RequestParams = {}
-    ) =>
+    editWebhook: (webhookId: string, data: PatchWebhookRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/webhooks/${webhookId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -5423,9 +5259,9 @@ export class Api<
     getWebhookIcon: (webhookId: string, params: RequestParams = {}) =>
       this.request<File, void>({
         path: `/webhooks/${webhookId}/icon`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'blob',
+        format: "blob",
         ...params,
       }),
 
@@ -5438,14 +5274,10 @@ export class Api<
      * @request PUT:/webhooks/{webhookId}/icon
      * @secure
      */
-    changeWebhookIcon: (
-      webhookId: string,
-      data: PutUserIconRequest,
-      params: RequestParams = {}
-    ) =>
+    changeWebhookIcon: (webhookId: string, data: PutUserIconRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/webhooks/${webhookId}/icon`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.FormData,
@@ -5499,16 +5331,16 @@ export class Api<
          * 昇順か降順か
          * @default "desc"
          */
-        order?: 'asc' | 'desc';
+        order?: "asc" | "desc";
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<Message[], void>({
         path: `/webhooks/${webhookId}/messages`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -5525,9 +5357,9 @@ export class Api<
     getTag: (tagId: string, params: RequestParams = {}) =>
       this.request<Tag, void>({
         path: `/tags/${tagId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -5544,9 +5376,9 @@ export class Api<
     getServerVersion: (params: RequestParams = {}) =>
       this.request<Version, any>({
         path: `/version`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -5569,11 +5401,11 @@ export class Api<
          */
         redirect?: string;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<void, void>({
         path: `/login`,
-        method: 'POST',
+        method: "POST",
         query: query,
         body: data,
         secure: true,
@@ -5604,11 +5436,11 @@ export class Api<
          */
         all?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<void, void>({
         path: `/logout`,
-        method: 'POST',
+        method: "POST",
         query: query,
         secure: true,
         ...params,
@@ -5644,14 +5476,14 @@ export class Api<
          */
         per_channel?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<ActivityTimelineMessage[], void>({
         path: `/activity/timeline`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5667,9 +5499,9 @@ export class Api<
     getOnlineUsers: (params: RequestParams = {}) =>
       this.request<string[], any>({
         path: `/activity/onlines`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -5686,7 +5518,7 @@ export class Api<
     ws: (params: RequestParams = {}) =>
       this.request<any, void>({
         path: `/ws`,
-        method: 'GET',
+        method: "GET",
         secure: true,
         ...params,
       }),
@@ -5704,9 +5536,9 @@ export class Api<
     getPublicUserIcon: (username: string, params: RequestParams = {}) =>
       this.request<File, void>({
         path: `/public/icon/${username}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'blob',
+        format: "blob",
         ...params,
       }),
   };
@@ -5729,14 +5561,14 @@ export class Api<
          */
         detail?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<OAuth2Client | OAuth2ClientDetail, void>({
         path: `/clients/${clientId}`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5752,7 +5584,7 @@ export class Api<
     deleteClient: (clientId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/clients/${clientId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -5766,14 +5598,10 @@ export class Api<
      * @request PATCH:/clients/{clientId}
      * @secure
      */
-    editClient: (
-      clientId: string,
-      data: PatchClientRequest,
-      params: RequestParams = {}
-    ) =>
+    editClient: (clientId: string, data: PatchClientRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/clients/${clientId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -5792,7 +5620,7 @@ export class Api<
     revokeClientTokens: (clientId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/clients/${clientId}/tokens`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -5814,14 +5642,14 @@ export class Api<
          */
         all?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<OAuth2Client[], any>({
         path: `/clients`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5837,11 +5665,11 @@ export class Api<
     createClient: (data: PostClientRequest, params: RequestParams = {}) =>
       this.request<OAuth2ClientDetail, void>({
         path: `/clients`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -5858,11 +5686,11 @@ export class Api<
     createBot: (data: PostBotRequest, params: RequestParams = {}) =>
       this.request<BotDetail, void>({
         path: `/bots`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5883,14 +5711,14 @@ export class Api<
          */
         all?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<Bot[], any>({
         path: `/bots`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5906,7 +5734,7 @@ export class Api<
     connectBotWs: (params: RequestParams = {}) =>
       this.request<any, void>({
         path: `/bots/ws`,
-        method: 'GET',
+        method: "GET",
         secure: true,
         ...params,
       }),
@@ -5923,9 +5751,9 @@ export class Api<
     getBotIcon: (botId: string, params: RequestParams = {}) =>
       this.request<File, void>({
         path: `/bots/${botId}/icon`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'blob',
+        format: "blob",
         ...params,
       }),
 
@@ -5938,14 +5766,10 @@ export class Api<
      * @request PUT:/bots/{botId}/icon
      * @secure
      */
-    changeBotIcon: (
-      botId: string,
-      data: PutUserIconRequest,
-      params: RequestParams = {}
-    ) =>
+    changeBotIcon: (botId: string, data: PutUserIconRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/bots/${botId}/icon`,
-        method: 'PUT',
+        method: "PUT",
         body: data,
         secure: true,
         type: ContentType.FormData,
@@ -5970,14 +5794,14 @@ export class Api<
          */
         detail?: boolean;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<Bot | BotDetail, void>({
         path: `/bots/${botId}`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -5993,7 +5817,7 @@ export class Api<
     deleteBot: (botId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/bots/${botId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -6007,14 +5831,10 @@ export class Api<
      * @request PATCH:/bots/{botId}
      * @secure
      */
-    editBot: (
-      botId: string,
-      data: PatchBotRequest,
-      params: RequestParams = {}
-    ) =>
+    editBot: (botId: string, data: PatchBotRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/bots/${botId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -6033,7 +5853,7 @@ export class Api<
     activateBot: (botId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/bots/${botId}/actions/activate`,
-        method: 'POST',
+        method: "POST",
         secure: true,
         ...params,
       }),
@@ -6050,7 +5870,7 @@ export class Api<
     inactivateBot: (botId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/bots/${botId}/actions/inactivate`,
-        method: 'POST',
+        method: "POST",
         secure: true,
         ...params,
       }),
@@ -6067,9 +5887,9 @@ export class Api<
     reissueBot: (botId: string, params: RequestParams = {}) =>
       this.request<BotTokens, void>({
         path: `/bots/${botId}/actions/reissue`,
-        method: 'POST',
+        method: "POST",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6099,14 +5919,14 @@ export class Api<
          */
         offset?: number;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<BotEventLog[], void>({
         path: `/bots/${botId}/logs`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6119,14 +5939,10 @@ export class Api<
      * @request POST:/bots/{botId}/actions/join
      * @secure
      */
-    letBotJoinChannel: (
-      botId: string,
-      data: PostBotActionJoinRequest,
-      params: RequestParams = {}
-    ) =>
+    letBotJoinChannel: (botId: string, data: PostBotActionJoinRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/bots/${botId}/actions/join`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -6142,14 +5958,10 @@ export class Api<
      * @request POST:/bots/{botId}/actions/leave
      * @secure
      */
-    letBotLeaveChannel: (
-      botId: string,
-      data: PostBotActionLeaveRequest,
-      params: RequestParams = {}
-    ) =>
+    letBotLeaveChannel: (botId: string, data: PostBotActionLeaveRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/bots/${botId}/actions/leave`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -6166,17 +5978,14 @@ export class Api<
      * @request POST:/webrtc/authenticate
      * @secure
      */
-    postWebRtcAuthenticate: (
-      data: PostWebRTCAuthenticateRequest,
-      params: RequestParams = {}
-    ) =>
+    postWebRtcAuthenticate: (data: PostWebRTCAuthenticateRequest, params: RequestParams = {}) =>
       this.request<WebRTCAuthenticateResult, void>({
         path: `/webrtc/authenticate`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6192,9 +6001,9 @@ export class Api<
     getWebRtcState: (params: RequestParams = {}) =>
       this.request<WebRTCUserStates, any>({
         path: `/webrtc/state`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
   };
@@ -6208,17 +6017,14 @@ export class Api<
      * @request POST:/clip-folders
      * @secure
      */
-    createClipFolder: (
-      data: PostClipFolderRequest,
-      params: RequestParams = {}
-    ) =>
+    createClipFolder: (data: PostClipFolderRequest, params: RequestParams = {}) =>
       this.request<ClipFolder, void>({
         path: `/clip-folders`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6234,9 +6040,9 @@ export class Api<
     getClipFolders: (params: RequestParams = {}) =>
       this.request<ClipFolder[], any>({
         path: `/clip-folders`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6252,9 +6058,9 @@ export class Api<
     getClipFolder: (folderId: string, params: RequestParams = {}) =>
       this.request<ClipFolder, void>({
         path: `/clip-folders/${folderId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6270,7 +6076,7 @@ export class Api<
     deleteClipFolder: (folderId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/clip-folders/${folderId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -6284,14 +6090,10 @@ export class Api<
      * @request PATCH:/clip-folders/{folderId}
      * @secure
      */
-    editClipFolder: (
-      folderId: string,
-      data: PatchClipFolderRequest,
-      params: RequestParams = {}
-    ) =>
+    editClipFolder: (folderId: string, data: PatchClipFolderRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/clip-folders/${folderId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -6307,18 +6109,14 @@ export class Api<
      * @request POST:/clip-folders/{folderId}/messages
      * @secure
      */
-    clipMessage: (
-      folderId: string,
-      data: PostClipFolderMessageRequest,
-      params: RequestParams = {}
-    ) =>
+    clipMessage: (folderId: string, data: PostClipFolderMessageRequest, params: RequestParams = {}) =>
       this.request<ClippedMessage, void>({
         path: `/clip-folders/${folderId}/messages`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6351,16 +6149,16 @@ export class Api<
          * 昇順か降順か
          * @default "desc"
          */
-        order?: 'asc' | 'desc';
+        order?: "asc" | "desc";
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<ClippedMessage[], void>({
         path: `/clip-folders/${folderId}/messages`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6373,14 +6171,10 @@ export class Api<
      * @request DELETE:/clip-folders/{folderId}/messages/{messageId}
      * @secure
      */
-    unclipMessage: (
-      folderId: string,
-      messageId: string,
-      params: RequestParams = {}
-    ) =>
+    unclipMessage: (folderId: string, messageId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/clip-folders/${folderId}/messages/${messageId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -6398,9 +6192,9 @@ export class Api<
     getStampPalettes: (params: RequestParams = {}) =>
       this.request<StampPalette[], any>({
         path: `/stamp-palettes`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6413,17 +6207,14 @@ export class Api<
      * @request POST:/stamp-palettes
      * @secure
      */
-    createStampPalette: (
-      data: PostStampPaletteRequest,
-      params: RequestParams = {}
-    ) =>
+    createStampPalette: (data: PostStampPaletteRequest, params: RequestParams = {}) =>
       this.request<StampPalette, void>({
         path: `/stamp-palettes`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6439,9 +6230,9 @@ export class Api<
     getStampPalette: (paletteId: string, params: RequestParams = {}) =>
       this.request<StampPalette, void>({
         path: `/stamp-palettes/${paletteId}`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6457,7 +6248,7 @@ export class Api<
     deleteStampPalette: (paletteId: string, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/stamp-palettes/${paletteId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
@@ -6471,14 +6262,10 @@ export class Api<
      * @request PATCH:/stamp-palettes/{paletteId}
      * @secure
      */
-    editStampPalette: (
-      paletteId: string,
-      data: PatchStampPaletteRequest,
-      params: RequestParams = {}
-    ) =>
+    editStampPalette: (paletteId: string, data: PatchStampPaletteRequest, params: RequestParams = {}) =>
       this.request<void, void>({
         path: `/stamp-palettes/${paletteId}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -6498,11 +6285,11 @@ export class Api<
     postOAuth2Token: (data: PostOAuth2Token, params: RequestParams = {}) =>
       this.request<OAuth2Token, void>({
         path: `/oauth2/token`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.UrlEncoded,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6515,13 +6302,10 @@ export class Api<
      * @request POST:/oauth2/authorize/decide
      * @secure
      */
-    postOAuth2AuthorizeDecide: (
-      data: OAuth2Decide,
-      params: RequestParams = {}
-    ) =>
+    postOAuth2AuthorizeDecide: (data: OAuth2Decide, params: RequestParams = {}) =>
       this.request<any, void>({
         path: `/oauth2/authorize/decide`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.UrlEncoded,
@@ -6549,11 +6333,11 @@ export class Api<
         nonce?: string;
         prompt?: OAuth2Prompt;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<any, void>({
         path: `/oauth2/authorize`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
         ...params,
@@ -6568,13 +6352,10 @@ export class Api<
      * @request POST:/oauth2/authorize
      * @secure
      */
-    postOAuth2Authorize: (
-      data: OAuth2Authorization,
-      params: RequestParams = {}
-    ) =>
+    postOAuth2Authorize: (data: OAuth2Authorization, params: RequestParams = {}) =>
       this.request<any, void>({
         path: `/oauth2/authorize`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.UrlEncoded,
@@ -6593,7 +6374,7 @@ export class Api<
     revokeOAuth2Token: (data: OAuth2Revoke, params: RequestParams = {}) =>
       this.request<void, any>({
         path: `/oauth2/revoke`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.UrlEncoded,
@@ -6615,14 +6396,14 @@ export class Api<
         /** OGPを取得したいURL */
         url: string;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<Ogp, void>({
         path: `/ogp`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -6640,11 +6421,11 @@ export class Api<
         /** OGPのキャッシュを削除したいURL */
         url: string;
       },
-      params: RequestParams = {}
+      params: RequestParams = {},
     ) =>
       this.request<void, void>({
         path: `/ogp/cache`,
-        method: 'DELETE',
+        method: "DELETE",
         query: query,
         secure: true,
         ...params,
