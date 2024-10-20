@@ -1,0 +1,26 @@
+{
+  "version": "4",
+  "specifiers": {
+    "npm:traq-bot-ts@*": "1.4.1"
+  },
+  "npm": {
+    "traq-bot-ts@1.4.1": {
+      "integrity": "sha512-7hAG+kAYRBFeyqgRmD1+z6N1m03Pv23xSULZilROLhe8uyCTHV0+lAFfQwdelqpd31985kNX/VXLHLOS9ItxVQ==",
+      "dependencies": [
+        "ws",
+        "zod"
+      ]
+    },
+    "ws@8.18.0": {
+      "integrity": "sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw=="
+    },
+    "zod@3.23.8": {
+      "integrity": "sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:traq-bot-ts@*"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "test": "deno run --allow-env --allow-net --allow-read main.ts | grep -q 'ok' && echo \"[deno] ok\" || echo \"[deno] ng\""
+  },
+  "imports": {
+    "traq-bot-ts": "npm:traq-bot-ts"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@traq-bot-ts-test/node",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node main.js | grep -q 'ok' && echo \"[node] ok\" || echo \"[node] ng\""
+  },
+  "dependencies": {
+    "traq-bot-ts": "file:../.."
+  }
+}

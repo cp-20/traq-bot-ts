@@ -1,0 +1,17 @@
+{
+  "name": "@traq-bot-ts-test/bun",
+  "module": "main.ts",
+  "type": "module",
+  "scripts": {
+    "test": "bun run main.ts | grep -q 'ok' && echo \"[bun] ok\" || echo \"[bun] ng\""
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "traq-bot-ts": "../../"
+  }
+}
