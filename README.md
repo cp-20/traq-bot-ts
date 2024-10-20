@@ -6,6 +6,13 @@ TypeScript で traQ Bot を作りたい人向けのライブラリです。JavaS
 
 ## 使い方
 
+```
+npm install traq-bot-ts
+yarn add traq-bot-ts
+pnpm add traq-bot-ts
+bun add traq-bot-ts
+```
+
 ```ts
 import { Client } from 'traq-bot-ts';
 
@@ -18,13 +25,13 @@ client.on('MESSAGE_CREATED', ({ message }) => {
 await client.listen(() => console.log('connected'));
 ```
 
+※Deno で使いたい場合は、最初の `traq-bot-ts` のところを `npm:traq-bot-ts` に書き換えてください
+
 `new Client()`でクライアントを生成して、各種イベントを`client.on()`でリッスンできます。
 
 最後に`await client.listen()`で実際にサーバーに接続して稼働を開始します。
 
 具体的なイベントについてはBOT Consoleのイベントリファレンスを参照してください。
-
-どのようなイベント
 
 ## コントリビューター向け
 
