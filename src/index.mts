@@ -6,21 +6,24 @@ export * from './api.ts';
 type ClientOption = {
   token?: string;
   debug?: boolean;
+  address?: string;
 };
 
 export class Client {
   private ws: WebSocket | null = null;
   private debug;
   private token;
+  private address;
   private handlers: DataHandlers;
 
-  constructor({ token, debug }: ClientOption) {
+  constructor({ token, debug, address }: ClientOption) {
     this.handlers = {
       ERROR: (data) => {
         console.error(`Error from traQ server: ${data.body}`);
       },
     };
     this.debug = debug ?? false;
+    this.address = address ?? 'wss://q.trap.jp/api/v3/bots/ws';
 
     const token_ = token ?? process.env.TRAQ_ACCESS_TOKEN;
     if (!token_) throw new Error('token is required');
@@ -35,7 +38,7 @@ export class Client {
   }
 
   async listen(openHandler?: () => void) {
-    this.ws = createWSConnection(this.token);
+    this.ws = createWSConnection(this.token, this.address);
 
     this.ws.addEventListener('open', () => openHandler?.());
 

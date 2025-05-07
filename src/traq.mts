@@ -1,8 +1,8 @@
 import { WebSocket } from 'ws';
 import { type Event, EventSchema } from './events.mts';
 
-export const createWSConnection = (token: string) =>
-  new WebSocket('wss://q.trap.jp/api/v3/bots/ws', {
+export const createWSConnection = (token: string, address: string) =>
+  new WebSocket(address, {
     headers: { Authorization: `Bearer ${token}` },
   });
 
