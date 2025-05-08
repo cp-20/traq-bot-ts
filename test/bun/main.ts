@@ -1,8 +1,8 @@
-import { Client } from "traq-bot-ts";
+import { Client } from 'traq-bot-ts';
 
 const client = new Client({ token: process.env.TOKEN });
 
-client.on("MESSAGE_CREATED", ({ body }) => {
+client.on('MESSAGE_CREATED', ({ body }) => {
   const {
     user: { name },
     plainText,
@@ -11,6 +11,6 @@ client.on("MESSAGE_CREATED", ({ body }) => {
 });
 
 client.listen(() => {
-  console.log("ok");
+  console.log('ok');
   process.exit(0);
 });
