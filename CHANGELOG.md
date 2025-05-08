@@ -1,5 +1,11 @@
 # traq-bot-ts
 
+## 1.5.2
+
+### Patch Changes
+
+- fix build issue
+
 ## 1.5.1
 
 ### Patch Changes
