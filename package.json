@@ -6,9 +6,12 @@
     "type": "git",
     "url": "git+https://github.com/cp-20/traq-bot-ts.git"
   },
-  "keywords": ["typescript", "traQ"],
+  "keywords": [
+    "typescript",
+    "traQ"
+  ],
   "license": "MIT",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "scripts": {
     "deploy": "",
     "build": "run-z build:transpile,build:esm,build:cjs",
@@ -25,7 +28,13 @@
     "run-z": "run-z",
     "generate-api": "bunx swagger-typescript-api --output src --name api.mts --path https://raw.githubusercontent.com/traPtitech/traQ/master/docs/v3-api.yaml"
   },
-  "files": ["src", "dist", "package.json", "tsconfig.json", "LICENSE"],
+  "files": [
+    "src",
+    "dist",
+    "package.json",
+    "tsconfig.json",
+    "LICENSE"
+  ],
   "exports": {
     ".": {
       "import": {
