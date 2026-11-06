@@ -55,7 +55,7 @@ export class Client {
     });
 
     const interval = setInterval(() => {
-      this.ws?.ping({}, undefined, async (err) => {
+      this.ws?.ping(undefined, undefined, async (err) => {
         if (!err) return;
         if (this.debug) console.log('ping failed, reconnecting...');
         this.ws?.close();
