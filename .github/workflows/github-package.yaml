@@ -12,7 +12,7 @@ concurrency:
 
 permissions:
   contents: read
-  packages: write
+  id-token: write
 
 jobs:
   publish:
@@ -30,5 +30,3 @@ jobs:
 
       - name: Publish npm package
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

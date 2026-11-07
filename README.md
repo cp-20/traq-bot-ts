@@ -63,3 +63,14 @@ await client.listen(() => console.log('connected'));
     bun changeset tag
     ```
 13. CI/CDが自動でNPMに公開する
+
+公開には npm の Trusted publishing を使用します。初回のみ、npm の
+`traq-bot-ts` の Settings → Trusted publishing で GitHub Actions を選択し、
+以下を登録してください（`npm publish` を許可、Environment name は空欄）。
+
+- Organization or user: `cp-20`
+- Repository: `traq-bot-ts`
+- Workflow filename: `github-package.yaml`
+
+公開に失敗した場合は、修正を main にマージした後、Actions の
+「Publish npm package」を main に対して手動実行すると同じバージョンの公開を再試行できます。
