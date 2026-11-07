@@ -1,5 +1,11 @@
 # traq-bot-ts
 
+## 1.5.3
+
+### Patch Changes
+
+- c37f431: Send WebSocket ping frames without an invalid object payload.
+
 ## 1.5.2
 
 ### Patch Changes
